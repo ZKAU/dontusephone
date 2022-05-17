@@ -5,24 +5,28 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/back"
         tools:context=".MainActivity">
-    <Button
-            android:id="@+id/bt_start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SERVICE START"
-            app:layout_constraintBottom_toTopOf="@+id/bt_stop"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:layout_editor_absoluteX="0dp" />
 
     <Button
-            android:id="@+id/bt_stop"
-            android:layout_width="match_parent"
+            android:id="@+id/bt_start"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="500dp"
-            android:text="SERVICE STOP"
+            android:text="방해 시작"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.683"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
+            android:textSize="50sp"/>
+    <Button
+            android:id="@+id/bt_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="방해 그만"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.823" android:textSize="40sp"
+            app:layout_constraintHorizontal_bias="0.498"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
