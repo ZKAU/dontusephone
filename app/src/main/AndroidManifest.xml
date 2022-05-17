@@ -10,7 +10,6 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:exported="true"
-            android:permission="Write_SETTINGS"
             android:theme="@style/Theme.Dontusephone">
 
         <service
