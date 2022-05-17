@@ -67,7 +67,7 @@ public class MyService extends Service {
                             wm.addView(mView, params);
                         }
                     }
-                }, 5000);
+                }, 1000);
 
             }
         });
