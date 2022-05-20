@@ -5,15 +5,28 @@
                 android:background="#00000000">
 
     <ImageButton
+            android:background="@android:color/transparent"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/bt"
             android:text="click"
             android:textColor="#ffffff"
-            android:src="@drawable/timetosleep"
-            android:layout_below="@+id/textView"
+            android:src="@drawable/blackback"
             android:layout_alignParentBottom="true"
             android:scaleType="fitCenter"
-            android:layout_alignParentLeft="true"/>
+            android:layout_alignParentLeft="true"
+    />
+    <ImageButton
+            android:background="@android:color/transparent"
+            android:layout_width="80dp"
+            android:layout_height="56dp"
+            android:id="@+id/bt2"
+            android:text="click"
+            android:textColor="#ffffff"
+            android:src="@drawable/ssss"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitCenter"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="163dp" android:layout_marginBottom="337dp"/>
 
 </RelativeLayout>
