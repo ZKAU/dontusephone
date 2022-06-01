@@ -7,7 +7,7 @@
     <ImageButton
             android:background="@android:color/transparent"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/bt"
             android:text="click"
             android:textColor="#ffffff"
@@ -15,7 +15,7 @@
             android:layout_alignParentBottom="true"
             android:scaleType="fitCenter"
             android:layout_alignParentLeft="true"
-    />
+            android:layout_marginLeft="-2dp" android:layout_marginBottom="-3dp"/>
     <ImageButton
             android:background="@android:color/transparent"
             android:layout_width="80dp"

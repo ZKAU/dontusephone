@@ -28,6 +28,9 @@
             <activity android:name=".MainActivity"
                       android:exported="true"
             ></activity>
+        <activity android:name=".timesetting"
+                  android:exported="true"
+                  ></activity>
 
     </application>
 
