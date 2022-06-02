@@ -23,7 +23,7 @@
             android:id="@+id/bt2"
             android:text="click"
             android:textColor="#ffffff"
-            android:src="@drawable/ssss"
+            android:src="@drawable/realsheep"
             android:layout_alignParentBottom="true"
             android:scaleType="fitCenter"
             android:layout_alignParentLeft="true"

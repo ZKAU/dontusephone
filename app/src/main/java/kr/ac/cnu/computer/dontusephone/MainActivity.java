@@ -1,6 +1,7 @@
 package kr.ac.cnu.computer.dontusephone;
 
 import android.content.Context;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -17,11 +18,14 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
 import java.util.concurrent.TimeUnit;
-
-import static kr.ac.cnu.computer.dontusephone.timesetting.sleeptime;
-import static kr.ac.cnu.computer.dontusephone.timesetting.waketime;
+import static kr.ac.cnu.computer.dontusephone.timesetting.*;
 
 public class MainActivity extends AppCompatActivity {
+    public static int st1;
+    public static int wt1;
+
+
+
     static final String d1="d1";
     static final String d2="d2";
     int a;
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        context = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         t1=findViewById(R.id.time1);//시작 시간
@@ -45,11 +50,26 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button bt_start = (Button) findViewById(R.id.bt_start);
-        context = this;
         bt_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkPermission();
+                Log.d("jj", String.valueOf(st1));
+                Log.d("jj", String.valueOf(wt1));
+                if(st1==wt1){
+
+                }
+                else if(st1==0 && wt1==0){
+
+                }
+                else{
+                    Handler mHandler = new Handler();
+                    mHandler.postDelayed(new Runnable() {
+                        public void run() {
+
+                            checkPermission();
+                        }
+                    }, 10000);
+                }
             }
         });
         Button butout=(Button)findViewById(R.id.but3);
@@ -72,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkPermission() {
+        Intent service=new Intent(this,MyService.class);
+        service.putExtra("mellung1",st1);
+        service.putExtra("mellung2",wt1);
         Log.d("jj", "check start");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {   // 마시멜로우 이상일 경우
             if (!Settings.canDrawOverlays(this)) {              // 체크
@@ -79,10 +102,14 @@ public class MainActivity extends AppCompatActivity {
                         Uri.parse("package:" + getPackageName()));
                 startActivity(intent);
             } else {
-                startService(new Intent(MainActivity.this, MyService.class));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    startForegroundService(service);
+                }
             }
         } else {
-            startService(new Intent(MainActivity.this, MyService.class));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(service);
+            }
         }
     }
     @TargetApi(Build.VERSION_CODES.M)
@@ -90,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        startService(new Intent(MainActivity.this, MyService.class));
+        startService(new Intent(this, MyService.class));
     }
     public void OneTimeWorker(Context context){
         Log.d("jj", "OTW start");
@@ -129,4 +156,5 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
+
 }

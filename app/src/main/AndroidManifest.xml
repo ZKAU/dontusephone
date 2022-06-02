@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="kr.ac.cnu.computer.dontusephone">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
@@ -10,12 +11,14 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:exported="true"
+            android:name=".getSleep"
             android:theme="@style/Theme.Dontusephone">
 
         <service
                 android:name=".MyService"
                 android:enabled="true"
                 android:exported="true"
+                android:process=":myservice"
                 android:permission="android.permission.SYSTEM_ALERT_WINDOW"/>
         <activity android:name=".SplashActivity"
                   android:exported="true">
@@ -27,6 +30,7 @@
             ></activity>
             <activity android:name=".MainActivity"
                       android:exported="true"
+
             ></activity>
         <activity android:name=".timesetting"
                   android:exported="true"

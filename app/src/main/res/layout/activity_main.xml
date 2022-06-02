@@ -22,30 +22,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="방해 시작"
+            android:backgroundTint="#2E2E2E"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.739"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:textSize="50sp" app:backgroundTint="#444D9E"/>
+            android:background="@drawable/dd"
+            android:textSize="36dp" app:backgroundTint="#2E2E2E"/>
     <Button
             android:id="@+id/bt_stop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="방해 그만"
+            android:background="@drawable/dd"
+            android:backgroundTint="#2E2E2E"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.895" android:textSize="40sp"
-            app:layout_constraintHorizontal_bias="0.497" app:backgroundTint="#444D9E"/>
+            app:layout_constraintVertical_bias="0.877" android:textSize="36dp"
+            app:layout_constraintHorizontal_bias="0.497" app:backgroundTint="#2E2E2E"/>
     <Button
             android:text="시간설정"
             android:id="@+id/but3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/dd"
+            android:backgroundTint="#2E2E2E"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="48dp"
-            app:layout_constraintHorizontal_bias="0.916" app:backgroundTint="#444D9E"/>
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="36dp"
+            app:layout_constraintHorizontal_bias="0.916" app:backgroundTint="#2E2E2E"/>
     <TextView
             android:text="- - : - -"
             android:layout_width="121dp"
