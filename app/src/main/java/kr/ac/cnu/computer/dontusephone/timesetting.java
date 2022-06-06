@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
+import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import static kr.ac.cnu.computer.dontusephone.MainActivity.*;
@@ -46,6 +47,7 @@ public class timesetting extends Activity {
                 }
                 t1.setText(sleeptime);
                 t2.setText(waketime);
+                Toast.makeText(getApplicationContext(), "시간이 설정되었습니다", Toast.LENGTH_SHORT).show();
                 onBackPressed();
                 Log.d("jj", String.valueOf(st1));
                 Log.d("jj", String.valueOf(wt1));

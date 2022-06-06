@@ -30,8 +30,6 @@ public class UploadWorker extends Worker {
             return Result.failure();
         }
 
-
-
     }
 
 

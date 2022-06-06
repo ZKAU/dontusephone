@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.TargetApi;
@@ -56,12 +57,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("jj", String.valueOf(st1));
                 Log.d("jj", String.valueOf(wt1));
                 if(st1==wt1){
-
+                    Toast.makeText(getApplicationContext(), "시작시간과 종료시간이 같아요", Toast.LENGTH_SHORT).show();
                 }
                 else if(st1==0 && wt1==0){
-
+                    Toast.makeText(getApplicationContext(), "시작시간과 종료시간이 같아요", Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    Toast.makeText(getApplicationContext(), "서비스가 10초후 시작됩니다", Toast.LENGTH_SHORT).show();
                     Handler mHandler = new Handler();
                     mHandler.postDelayed(new Runnable() {
                         public void run() {
@@ -85,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         bt_stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("jj", String.valueOf(st1));
+                Log.d("jj", String.valueOf(wt1));
                 stopService(new Intent(MainActivity.this, MyService.class));
             }
         });

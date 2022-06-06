@@ -11,7 +11,6 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:exported="true"
-            android:name=".getSleep"
             android:theme="@style/Theme.Dontusephone">
 
         <service
